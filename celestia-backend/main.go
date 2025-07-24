@@ -3,35 +3,18 @@ package main
 import (
 	"celestia-backend/config"
 	"celestia-backend/routes"
-	"log"
-	"net/http"
 
 	"github.com/gin-gonic/gin"
 )
 
-func main(){
+func main() {
+	config.ConnectDB() // 🔌 Connects to DB
 
-	config.ConnectDB()
+	r := gin.Default()
+	
 
-	router := gin.Default()
+	// 🧠 Pass the DB from config
+	routes.RegisterRoutes(r, config.DB)
 
-	router.GET("/",func(c *gin.Context){
-		c.JSON(http.StatusOK,gin.H{
-			"message": "Celestia Dynamics Backend is Live🚀",
-		})
-	})
-
-	routes.AuthRoutes(router)
-
-	log.Println("Server started on http://localhost:8080")
-	router.Run(":8080");
-
-	//TODO: Plug in routes here
-	//Example: authRoutes(router)
-
-	//log.Println("Starting server on: 8080...")
-	//err := router.Run(":8080")
-	//if err!= nil{
-	//	log.Fatal("Server couldn't start:", err)
-	//}
+	r.Run(":8080")
 }

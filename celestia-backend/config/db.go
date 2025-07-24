@@ -1,38 +1,37 @@
 package config
 
-import(
+import (
 	"context"
-	"fmt"
 	"log"
+	"os"
 	"time"
 
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
 )
 
-var DB *mongo.Client
+var DB *mongo.Database
+var client *mongo.Client
 
-func ConnectDB() *mongo.Client{
-	mongoURI := "mongodb+srv://dynamicscelestia:jprxwIJ7wpja3h7z@celestiacluster.bbaluuc.mongodb.net/?retryWrites=true&w=majority&appName=CelestiaCluster"
-	clientOptions := options.Client().ApplyURI(mongoURI)
-	ctx,cancel := context.WithTimeout(context.Background(),10*time.Second)
-	defer cancel();
-
-	client,err := mongo.Connect(ctx,clientOptions)
-	if err!=nil{
-		log.Fatal(err);
+func ConnectDB() {
+	mongoURI := os.Getenv("MONGO_URI")
+	if mongoURI == "" {
+		mongoURI = "mongodb://localhost:27017" // fallback
 	}
 
-	err = client.Ping(ctx,nil)
-	if err != nil{
-		log.Fatal("Couldn't connect to MongoDB:",err)
+	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
+	defer cancel()
+
+	var err error
+	client, err = mongo.Connect(ctx, options.Client().ApplyURI(mongoURI))
+	if err != nil {
+		log.Fatalf("❌ Failed to connect to MongoDB: %v", err)
 	}
 
-	fmt.Println("✅Connected to MongoDB Atlas")
-	DB = client
-	return client
+	DB = client.Database("celestia")
+	log.Println("✅ MongoDB connected")
 }
 
-func GetCollection(client *mongo.Client,collectionName string) *mongo.Collection{
-	return client.Database("celestia").Collection(collectionName)
+func GetCollection(collectionName string) *mongo.Collection {
+	return DB.Collection(collectionName)
 }
