@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site Under Maintenance</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: url('images/maintenance.jpg') no-repeat center center/cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            color: white;
+            font-family: 'Orbitron', sans-serif;
+        }
+        .container {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+        }
+        h1 {
+            font-size: 3em;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            animation: glow 1.5s infinite alternate;
+        }
+        p {
+            font-size: 1.2em;
+            margin-top: 10px;
+        }
+        @keyframes glow {
+            0% { text-shadow: 0 0 10px white; }
+            100% { text-shadow: 0 0 20px cyan, 0 0 30px blue; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>We’ll be back soon!</h1>
+        <p>This page is currently undergoing maintenance.<br>
+           Stay tuned for exciting updates from the Celestia Dynamics!</p>
+    </div>
+</body>
+</html>

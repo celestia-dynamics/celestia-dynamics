@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projectile Motion Simulation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="background"></div>
+    <div class="container">
+        <h1>Projectile Motion Simulation</h1>
+        <div id="input-fields">
+            <label for="angle">Angle (degrees):</label>
+            <input type="number" id="angle" placeholder="Enter angle">
+            <label for="velocity">Velocity (m/s):</label>
+            <input type="number" id="velocity" placeholder="Enter velocity">
+            <label for="air-resistance">Air Resistance:</label>
+            <input type="number" id="air-resistance" placeholder="Enter air resistance">
+            <label for="wind-speed">Wind Speed (m/s):</label>
+            <input type="number" id="wind-speed" placeholder="Enter wind speed">
+            <button id="simulate-btn">Simulate</button>
+        </div>
+        <div id="plot"></div>
+    </div>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="script.js"></script>
+    <footer>
+        Developed by Parth Bhanti
+    </footer>
+    
+</body>
+</html>

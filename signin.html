@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Celestia Dynamics</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: url('images/maintenance.jpg') no-repeat center center/cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            color: white;
+            font-family: 'Orbitron', sans-serif;
+        }
+        .container {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+            width: 300px;
+        }
+        h1 {
+            font-size: 2.2em;
+            margin-bottom: 20px;
+            animation: glow 1.5s infinite alternate;
+        }
+        input[type="text"],
+        input[type="password"] {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            outline: none;
+        }
+        button {
+            width: 95%;
+            padding: 10px;
+            background-color: cyan;
+            color: black;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .google-login {
+            background-color: white;
+            color: black;
+            margin-top: 10px;
+        }
+        a {
+            color: cyan;
+            display: block;
+            margin-top: 10px;
+            font-size: 0.9em;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        @keyframes glow {
+            0% { text-shadow: 0 0 10px white; }
+            100% { text-shadow: 0 0 20px cyan, 0 0 30px blue; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Sign In</h1>
+        <form action="/login" method="POST">
+            <input type="text" name="username" placeholder="Username" required><br>
+            <input type="password" name="password" placeholder="Password" required><br>
+            <button type="submit">Login</button>
+        </form>
+        <p>OR</p>
+        <button class="google-login" onclick="location.href='/login/google'">Login with Google</button>
+        <a href="#">Forgot password?</a>
+        <a href="signup.html">New user? Create an account</a>
+    </div>
+</body>
+</html>

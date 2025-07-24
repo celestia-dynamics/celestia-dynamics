@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Celestia Dynamics Forum</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: url('images/maintenance.jpg') no-repeat center center/cover;
+            color: white;
+            font-family: 'Orbitron', sans-serif;
+            text-align: center;
+        }
+        .container {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+            max-width: 800px;
+            margin: 50px auto;
+        }
+        h1 {
+            font-size: 3em;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            animation: glow 1.5s infinite alternate;
+        }
+        @keyframes glow {
+            0% { text-shadow: 0 0 10px white; }
+            100% { text-shadow: 0 0 20px cyan, 0 0 30px blue; }
+        }
+        .forum-thread {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .forum-thread:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        .new-thread {
+            margin-top: 20px;
+            padding: 10px;
+            background: cyan;
+            color: black;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .new-thread:hover {
+            background: blue;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Celestia Dynamics Forum</h1>
+        <p>Join the discussion about futuristic space tech, astrophysics, and beyond!</p>
+        
+        <div class="forum-thread" onclick="alert('Opening Thread: Black Hole Discussions')">
+            <h3>Black Hole Discussions</h3>
+            <p>Latest theories and observations about black holes.</p>
+        </div>
+        
+        <div class="forum-thread" onclick="alert('Opening Thread: Space Travel Innovations')">
+            <h3>Space Travel Innovations</h3>
+            <p>Discuss upcoming technologies for interstellar travel.</p>
+        </div>
+
+        <button class="new-thread" onclick="alert('Feature Coming Soon: Create a New Thread')">Start a New Thread</button>
+    </div>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Celestia Dynamics - Featured Video</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: url('images/maintenance.jpg') no-repeat center center/cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            color: white;
+            font-family: 'Orbitron', sans-serif;
+            flex-direction: column;
+        }
+        .container {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+            max-width: 950px;
+        }
+        h1 {
+            font-size: 3em;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            animation: glow 1.5s infinite alternate;
+        }
+        p {
+            font-size: 1.2em;
+            margin-top: 10px;
+        }
+        .video-wrapper { /* New wrapper class */
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            margin-top: 20px;
+        }
+        .youtube-video { /* Adjusted iframe class */
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+        }
+        @keyframes glow {
+            0% { text-shadow: 0 0 10px white; }
+            100% { text-shadow: 0 0 20px cyan, 0 0 30px blue; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Featured Simulation</h1>
+        <p>Experience the wonders of physics through interactive simulations. Below is a demonstration of one of our latest experiments in motion and energy.</p>
+        <div class="video-wrapper">
+            <iframe class="youtube-video" src="https://www.youtube.com/embed/GyaGdyE2iRg" title="Celestia Dynamics - A New Beginning!" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+    </div>
+</body>
+</html>

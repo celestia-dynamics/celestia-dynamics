@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Celestia Dynamics</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: url('images/maintenance.jpg') no-repeat center center/cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            color: white;
+            font-family: 'Orbitron', sans-serif;
+        }
+        .container {
+            background: rgba(0, 0, 0, 0.75);
+            padding: 40px 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+            width: 95%;
+            max-width: 500px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h1 {
+            font-size: 2.5em;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            margin-bottom: 20px;
+            animation: glow 1.5s infinite alternate;
+        }
+        form {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        input {
+            width: 80%;
+            padding: 10px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 5px;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1em;
+        }
+        button, .google-btn {
+            width: 84%;
+            padding: 10px;
+            margin: 10px 0;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1em;
+            text-transform: uppercase;
+            border: none;
+            border-radius: 5px;
+            background: cyan;
+            color: black;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        button:hover, .google-btn:hover {
+            background: white;
+        }
+        .google-btn {
+            background: #4285F4;
+            color: white;
+        }
+        .footer-links {
+            margin-top: 10px;
+        }
+        .footer-links a {
+            color: cyan;
+            text-decoration: none;
+            margin: 0 5px;
+            font-size: 0.9em;
+        }
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+        @keyframes glow {
+            0% { text-shadow: 0 0 10px white; }
+            100% { text-shadow: 0 0 20px cyan, 0 0 30px blue; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Sign Up</h1>
+        <form>
+            <input type="text" placeholder="First Name" required>
+            <input type="text" placeholder="Last Name" required>
+            <input type="text" placeholder="Username" required>
+            <input type="email" placeholder="Email or Mobile" required>
+            <input type="password" placeholder="Password" required>
+            <input type="password" placeholder="Re-enter Password" required>
+            <button type="submit">Verify</button>
+        </form>
+        <button class="google-btn">Sign up with Google</button>
+        <div class="footer-links">
+            <p>Already have an account? <a href="signin.html">Sign in</a></p>
+        </div>
+    </div>
+</body>
+</html>
